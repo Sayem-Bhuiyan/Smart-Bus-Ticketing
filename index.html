@@ -26,10 +26,22 @@
             font-family: "Raleway", sans-serif;
         }
     </style>
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+              'green-primary': '#1DD100',
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
-    <header class="w-11/12 mx-auto mt-5 md:mt-10">
-      <!-- navbar -->
+    <header class="w-11/12 mx-auto mt-5 md:mt-10 mb-10 md:mb-28 lg:mb-44">
+      <!-- navbar --> 
       <div class="navbar font-raleway mt-6 md:mb-10">
         <div class="navbar-start">
           <div class="dropdown">
@@ -70,7 +82,7 @@
           </ul>
         </div>
         <div class="navbar-end">
-          <a class="btn text-xl text-[#1DD100] border-[#1DD100]/10">Bus <img src="images/bus-icon.png" alt=""></a>
+          <a class="btn text-xl text-[#1DD100] border-[#1DD100]/40 bg-[#1DD100]/10">Bus <img src="images/bus-icon.png" alt=""></a>
         </div>
       </div>
 
@@ -120,5 +132,41 @@
       </div>
     </div>
     </header>
+
+    <!-- main section start -->
+    <main>
+      <!-- cuppon section -->
+      <section class="text-center mb-10 lg:mb-20">
+        <div class="w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10 mb-10 lg:mb-20 text-left">
+          <!-- 15% off cuppon -->
+          <div class="bg-[#FFBF0F] flex items-center md:gap-7 rounded-3xl h-[218px]">
+            <div class="font-inter lg:space-y-2 p-3 lg:p-10">
+              <h2 class="text-xl md:text-2xl lg:text-[40px] text-black font-black leading-9">15% OFF</h2>
+              <h4 class="text-lg lg:text-xl font-semibold leading-8">on your next purchase</h4>
+              <p class="text-lg font-medium text-[#030712]/50">use by January 2024</p>
+            </div>
+            <img src="images/cupon-devider.png" alt="">
+            <div class="font-raleway p-3 lg:p-10">
+              <h2 class=" text-xl lg:text-3xl font-bold text-[#030712] leading-[180%]">NEW15</h2>
+              <p class="text-lg lg:text-xl text-[#030712]/40">Coupon Code</p>
+            </div>
+          </div>
+          <!-- 20% off cuppon -->
+          <div class="bg-[#F78C9C] flex items-center md:gap-7 rounded-3xl h-[218px]">
+            <div class="font-inter lg:space-y-2 p-3 lg:p-10">
+              <h2 class="text-xl md:text-2xl lg:text-[40px] text-black font-black leading-9">20% OFF</h2>
+              <h4 class="text-lg lg:text-xl font-semibold leading-8">on your next purchase</h4>
+              <p class="text-lg font-medium text-[#030712]/50">use by January 2024</p>
+            </div>
+            <img class="" src="images/cupon-devider.png" alt="">
+            <div class="font-raleway p-3 lg:p-10">
+              <h2 class=" text-xl lg:text-3xl font-bold text-[#030712] leading-[180%]">Cuople 20</h2>
+              <p class="text-lg lg:text-xl text-[#030712]/40">Coupon Code</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn text-green-primary text-center text-xl font-bold border-[#1DD100]">See All Offer</button>
+      </section>
+    </main>
   </body>
 </html>
