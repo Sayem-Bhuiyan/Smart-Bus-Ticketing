@@ -15,6 +15,14 @@ for (const seat of allSeats) {
     if(!clickedList.includes(element.innerText)){
       clickedList.push(element.innerText)
       seatClicked += 1;
+      
+      const cupponApplyInputField = getElementById('input-field')
+      if(seatClicked === 4){
+        cupponApplyInputField.removeAttribute('disabled')
+      }
+      else {
+        cupponApplyInputField.setAttribute('disabled', '')
+      }
       if (seatClicked <= 4) {
         const selectedSeat = event.target;
         clickedList.push(selectedSeat.innerText)
@@ -88,18 +96,18 @@ const updateThePrice = (elementId) => {
 
 
 // addEvenListener to the input for using cuppon
-document.getElementById('input-field').addEventListener('keyup', function(event){
-  const cupponCode = event.target.value;
-  const seatSelected =  getElementInnerTextValue('seat-selected');
-  console.log(seatSelected)
-  const cupponApplyBtn = getElementById('cuppon-apply-btn');
-  if(cupponCode === 'NEW15' || cupponCode === 'Couple 20' && seatSelected === 4){
-    cupponApplyBtn.removeAttribute('disabled')
-  }
-  else {
-    cupponApplyBtn.setAttribute('disabled', '')
-  }
-})
+// document.getElementById('input-field').addEventListener('keyup', function(event){
+//   const cupponCode = event.target.value;
+//   const seatSelected =  getElementInnerTextValue('seat-selected');
+//   console.log(seatSelected)
+//   const cupponApplyBtn = getElementById('cuppon-apply-btn');
+//   if(cupponCode === 'NEW15' || cupponCode === 'Couple 20' && seatSelected === 4){
+//     cupponApplyBtn.removeAttribute('disabled')
+//   }
+//   else {
+//     cupponApplyBtn.setAttribute('disabled', '')
+//   }
+// })
 
 
 const grandTotalCalculate = () => {
@@ -119,6 +127,7 @@ const grandTotalCalculate = () => {
     // hide the cuppon input field
     const cupponField = getElementById('cuppon-apply-field');
     cupponField.classList.add('hidden')
+    discountField.classList.remove('hidden')
   }
   else if(cuppon === 'Couple 20'){
     const discount = grandTotal * (20 / 100);
@@ -129,8 +138,11 @@ const grandTotalCalculate = () => {
     // hide the cuppon input field
     const cupponField = getElementById('cuppon-apply-field');
     cupponField.classList.add('hidden')
+    discountField.classList.remove('hidden')
   }
-  discountField.classList.remove('hidden')
+  else {
+    alert('Please Provide a valid cuppon code.')
+  }
 }
 
 // remove the disabled attribute from the Next btn
