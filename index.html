@@ -333,6 +333,11 @@
                   <h1>Total Price</h1>
                   <p>BDT <span id="total-price">0</span></p>
                 </div>
+                <!-- discount Price -->
+                <div id="discount-element" class="flex items-center justify-between text-lg font-inter font-medium mb-10 hidden">
+                  <h1>Discount Price Price</h1>
+                  <p>BDT <span id="discount-price">0</span></p>
+                </div>
                 <div id="cuppon-apply-field" class="w-full font-inter flex mb-5">
                   <input id="input-field" class="pl-5 py-3 border-0 bg-white w-full rounded-lg" type="text" placeholder="Have any cuppon?">
                   <button onclick="grandTotalCalculate()" id="cuppon-apply-btn" disabled class="btn bg-green-primary text-white text-base font-semibold">Apply</button>
@@ -349,13 +354,13 @@
                 <input class="pl-5 py-3 w-full rounded-lg border mb-3" type="text" name="name" id="name" placeholder="Enter your name" required>
 
                 <p class="text-base font-semibold">Phone Number*</p><br>
-                <input class="pl-5 py-3 w-full rounded-lg border mb-3" type="tel" name="tel" id="tel" placeholder="Enter your name" required>
+                <input id="phn-input" class="pl-5 py-3 w-full rounded-lg border mb-3" type="tel" name="tel"  placeholder="Enter your number" required>
 
                 <p class="text-base font-semibold">Email ID</p><br>
-                <input class="pl-5 py-3 w-full rounded-lg border mb-5" type="email" name="email" id="email" placeholder="Enter your name" required>
+                <input class="pl-5 py-3 w-full rounded-lg border mb-5" type="email" name="email" id="email" placeholder="Enter your email" required>
 
                 <!-- Next button -->
-                <button onclick="my_modal_1.showModal()" class="btn w-full  font-raleway font-extrabold text-xl text-white bg-green-primary">Next</button>
+                <button id="next-btn" onclick="my_modal_1.showModal()" class="btn w-full  font-raleway font-extrabold text-xl text-white bg-green-primary" disabled>Next</button>
                 <dialog id="my_modal_1" class="modal font-roboto">
                   <div class="modal-box text-center">
                     <div >
@@ -369,7 +374,7 @@
                     <div class="modal-action mx-auto flex justify-center">
                       <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
-                        <button class="btn px-20 rounded-full bg-green-primary text-white text-xl font-semibold">Continue</button>
+                        <button id="continue-btn" class="btn px-20 rounded-full bg-green-primary text-white text-xl font-semibold">Continue</button>
                       </form>
                     </div>
                   </div>
